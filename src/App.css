@@ -1,38 +1,138 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  width: 100vw;
   min-height: 100vh;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.exchange {
+  width: 430px;
+  height: 300px;
+  position: relative;
+}
+
+.exchange__wrapper {
+  width: 100%;
+  height: 50%;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.exchange__current-amout {
+  width: 120px;
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #747373;
+}
+
+.exchange__wrapper:last-of-type {
+  background-color: #f2f1ef;
+}
+
+.exchange__combo {
+  background-color: transparent;
+  width: 120px;
+}
+
+.exchange__row {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.exchange__row:first-of-type {
+  justify-content: space-between;
+}
+.exchange__final-conversion {
+  font-size: 20px;
+  padding: 5px 10px;
+  font-weight: bold;
+  justify-self: flex-end;
+}
+
+.exchange__input {
+  flex: 1;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.exchange__input::-webkit-outer-spin-button,
+.exchange__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.exchange__input.exchange__input--error {
+  border-color: red;
+  outline-color: red;
+}
+
+.exchange__error-message {
+  font-size: 14px;
+  color: red;
+  width: 200px;
+  padding: 10px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.exchange__base-conversion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid #e4e4e2;
+  color: #2d8f91;
+}
+
+.exchange__swap {
+  all: unset;
+  width: 30px;
+  height: 30px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border: 1px solid #e4e4e2;
+  background-color: #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translate(-50%, -50%);
 }
 
-.App-link {
-  color: #61dafb;
+.exchange__swap svg {
+  width: 15px;
+  height: 15px;
+  transform: rotate(90deg);
+  fill: #2d8f91;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.exchange__swap:disabled svg {
+  fill: gray;
+}
+
+.exchange__submit {
+  all: unset;
+  padding: 10px 50px;
+  background-color: #7a44d0;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.exchange__submit:disabled {
+  background-color: gray;
 }
