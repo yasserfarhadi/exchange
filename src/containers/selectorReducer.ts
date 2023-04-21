@@ -90,7 +90,7 @@ export const usePropsCollector = () => {
     //  isLoading,
     //  isError
   } = useQuery('latest-currency-values', fetchCurrencyRates, {
-    // refetchInterval: 5000,
+    refetchInterval: 5000,
   });
   const base =
     data &&
